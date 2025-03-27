@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html
+	class="js no-flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths gr_weikaichen_github_io"
+	lang="en"><!--<![endif]-->
+
+<head>
+	<!-- Google tag (gtag.js) -->
+
+	<style>
+		li {
+			list-style-type: none
+		}
+
+		.custom-list li {
+			margin-bottom: 5.2px;
+			margin-right: 3px;
+		}
+
+		.custom-list_news2 li {
+			margin-bottom: 5.2px;
+			margin-right: 3px;
+			margin-left: -12px;
+		}
+
+		.li_data {
+			display: inline-block;
+			width: 70px;
+			font-weight: bold;
+			vertical-align: top;
+
+		}
+
+		.li_data2 {
+			margin-top: 3px;
+			display: inline-block;
+			width: 70px;
+			font-weight: bold;
+			vertical-align: top;
+		}
+
+		.li_content2 {
+			margin-top: 3px;
+			display: inline-block;
+			width: calc(100% - 70px);
+			vertical-align: top;
+			margin-bottom: -1px;
+
+		}
+
+
+		.li_data_show_more {
+			display: inline-block;
+			margin-left: -12px;
+			/* 通过负的 margin-left 向左移动 */
+			margin-bottom: -3px;
+			width: 200px;
+			< !-- font-weight: bold;
+			-->vertical-align: top;
+		}
+
+		.li_content {
+			display: inline-block;
+			width: calc(100% - 70px);
+			vertical-align: top;
+
+			margin-bottom: -1px;
+
+		}
+
+		.li_data_short {
+			display: inline-block;
+			width: 40px;
+			font-weight: bold;
+			vertical-align: top;
+
+		}
+
+		.li_content_short {
+			display: inline-block;
+			width: calc(100% - 40px);
+			vertical-align: top;
+		}
+
+		.half-br {
+			display: block;
+			height: 50vh;
+			/* 50% of the viewport height */
+			content: "";
+		}
+	</style>
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-PYC1GJ7PZQ"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+		gtag('config', 'G-PYC1GJ7PZQ');
+	</script>
+
+	<style>
+		.bio_container {
+			/*display: flex;*/
+			/*flex-direction: row;*/
+			/*align-items: flex-start; !* 图片和文字顶部对齐 *!*/
+
+			/*align-items: top;*/
+		}
+
+		.slider-container {
+			width: 213px;
+			height: 220px;
+			overflow: hidden;
+			position: relative;
+			margin: 3px;
+			/*flex-shrink: 0;*/
+			/*  flex: 0 0 auto; !* 图片容器不会伸缩 *!*/
+			float: left;
+
+		}
+
+		.slider-text {
+			/*padding: 10px;*/
+			/*margin: 10px;*/
+			/*position: relative;*/
+			/*margin: 30px;*/
+			/* margin-left: 10px;*/
+			/*float: left; !* 文字容器向左浮动 *!*/
+			/*width: 1000px;*/
+			/*height: 220px;*/
+			/*height: 100%;*/
+			/*  flex: 1 1 auto; !* 文字容器伸缩填充剩余空间 *!*/
+
+			/*float: left;*/
+		}
+
+		.slider {
+			display: flex;
+			width: 220px;
+			height: 210px;
+			transition: transform 0.5s ease-in-out;
+		}
+
+		.slide {
+			width: 220px;
+			/*control the window size*/
+			height: 210px;
+			flex-shrink: 0;
+		}
+
+		.slide img {
+			/*width: 98.5%;*/
+			/*height: 99%;*/
+			width: 200px;
+			height: 210px;
+
+		}
+
+		.slider-controls {
+			position: absolute;
+			bottom: 10px;
+			left: 50%;
+			transform: translateX(-50%);
+			display: flex;
+		}
+
+		.slider-controls button {
+			background: none;
+			border: none;
+			cursor: pointer;
+			padding: 10px;
+			margin: 0 60px;
+			color: darkgrey;
+			font-weight: bold;
+			font-size: 20px;
+
+		}
+
+		.custom-line-height {
+			line-height: 10em;
+			/* 0.5 times the font size */
+		}
+	</style>
+	<style>
+		/* 添加 CSS 过渡效果 */
+		body {
+			scroll-behavior: smooth;
+		}
+
+		#vis_rl {
+			font-weight: normal;
+			transition: font-weight 1s ease;
+			/* 添加过渡效果 */
+		}
+
+		/* 闪烁效果 */
+		@keyframes highlight {
+			0% {
+				background-color: yellow;
+			}
+
+			50% {
+				background-color: transparent;
+			}
+
+			100% {
+				background-color: yellow;
+			}
+		}
+
+		.highlighted {
+			animation: highlight 3s infinite;
+			/* 3秒的闪烁效果，infinite 表示无限循环 */
+		}
+	</style>
+
+
+
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+	<title>Zhenmin Zhang</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="./files/modernizr-2.5.3.min.js.download"></script>
+
+	<script src="./files/jquery.min.js.download"></script>
+	<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.7.2.min.js"><\/script>')</script>
+
+
+
+
+
+
+	<script src="./files/spamspan.min.js.download"></script>
+	<script src="./files/prettify.js.download"></script>
+
+	<link rel="stylesheet" href="./files/social_widget.css">
+	<link rel="stylesheet" href="./files/glyphicons.css">
+	<link rel="stylesheet" href="./files/bootstrap.css">
+	<link rel="stylesheet" href="./files/bootstrap-responsive.css">
+	<link rel="stylesheet" href="./files/app.css">
+	<!-- <link rel="stylesheet" href="./files/font-awesome.min.css"> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="./files/plugins.js.download"></script>
+	<script type="text/javascript" src="./files/main.js.download"></script>
+	<link rel="canonical" href="https://zmzhang0.github.io/">
+
+	<!-- to toggle text -->
+	<style type="text/css">
+		a.toggle_text_link {
+			cursor: pointer;
+		}
+
+		pre.invisible_text {
+			display: none;
+		}
+	</style>
+	<script language="javascript" type="text/javascript">
+		function toggle(element) {
+			if (element.style.display == "block") {
+				element.style.display = "none";
+			} else {
+				element.style.display = "block";
+			}
+		}
+	</script>
+
+</head>
+
+<body class="home page page-id-4 page-template-default top-navbar" data-gr-c-s-loaded="true">
+	<!--[if lt IE 7]><div class="alert">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</div><![endif]-->
+
+	<header id="banner" class="navbar navbar-fixed-top" role="banner">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<!---<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				-->
+				</a>
+				<a class="brand" href="https://zmzhang0.github.io/">
+					Zhenmin Zhang
+				</a>
+				<nav id="nav-main" class="nav-collapse" role="navigation">
+					<ul class="nav">
+						<li class="menu-home active active"><a href="https://zmzhang0.github.io/">Home</a></li>
+						<li class="menu-publications"><a href="./publication.html">Publications</a></li>
+						<!--						<li class="menu-publications"><a href="./research_statement.html">Research Statement</a></li>-->
+						<!---<li class="menu-cv"><a href="http://herohuyongtao.github.io/cv/">CV</a></li>-->
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<div id="wrap" class="container" role="document">
+		<div id="content" class="row">
+			<div id="main" class="span8" role="main">
+				<div class="page-header">
+					<h1>Zhenmin Zhang</h1>
+					<!--						<img class="size-medium wp-image-712" style="margin-bottom: 5px;" src="./files/my_name.png" alt="Homepage" width="100" />-->
+					<!--					</h1>-->
+				</div>
+				<div class="bio_container">
+					<div class="slider-container">
+						<div class="slider">
+
+
+							<div class="slide">
+								<img class=" wp-image-697 alignleft dropshadow"
+									style="margin: 0 1.5em 1em 0; border: 1px solid #222;" src="./files/zhenmin.png"
+									alt="Slide 1" width="195" height="200">
+							</div>
+
+							<div class="slide">
+								<img class="wp-image-697 alignleft dropshadow"
+									style="margin: 0 -1.5em -1em 0; border: 1px solid #222;" src="./files/zhenmin.png"
+									alt="Slide 2" width="195" height="200">
+
+							</div>
+
+						</div>
+						<div class="slider-controls">
+							<button onclick="prevSlide()">&lt</button>
+							<button onclick="nextSlide()">&gt</button>
+						</div>
+
+
+					</div>
+
+					<div class="slider-text">
+						<!--									<div id="main" class="span8" role="main">-->
+						<p>
+							I am a Ph.D. candidate in Computer Graphics Group at the <a
+								href="https://irc.cs.sdu.edu.cn/">Interdisciplinary Research Center</a> of <a
+								href="https://www.sdu.edu.cn/">Shandong University</a>, supervised by <a
+								href="https://haisenzhao.github.io/">Prof. Haisen Zhao</a>.
+							Before that, I received Bachelor's degree in 2023 from the School of <a
+								href="https://www.cs.sdu.edu.cn/">Computer Science
+								and
+								Technology</a>, <a href="https://www.sdu.edu.cn/">Shandong
+								University</a>.<br>
+							<!--					My primary research is in Computer Science while intersecting with Environmental Science. I am an organizer of <a href="https://anysyn3d.github.io">AnySyn3D</a> research group, with a mission to enhance the speed, affordability, and quality of 3D AIGC 🌎. I am also with Efficient Computing Interest Group.-->
+							<!--				I am also a co-founder and member of Efficient Computing Group (ECG).-->
+							<!--					<br>-->
+							<!--				<p style="color: rgb(205,97,85)">🌟Expected graduation in 2025, open to postdoc and research scientist positions.🌟</p>-->
+							<br>
+							Research Interests (<a href="#hiddenSection" onclick="scrollToHiddenSection()">
+								Cnmputer Graphics</a>): Geometric computation, Digital fabrication, Toolpath
+							Optimization, 3D irregular shape.
+							<br>
+						</p>
+
+						<div class="alignbottom visible-desktop">
+							<p>
+								&nbsp; &nbsp;
+								<a href="https://www.en.sdu.edu.cn/">
+									<img class="size-medium wp-image-712" style="margin-bottom: 0px;"
+										src="./files/sdu.png" alt="Shandong University" width="80" />
+								</a>
+								<!-- &nbsp; &nbsp; -->
+								<!-- <a href="http://www.hku.hk/">
+									<img class="size-medium wp-image-712" style="margin-bottom: 0px;"
+										src="./files/hku1.png" alt="The University of Hong Kong" width="195" />
+								</a> -->
+								<!-- <a href="https://www.upenn.edu/"> -->
+								<!--									# 							<img class="size-medium wp-image-712" style="margin-bottom: 0px;" src="./files/Logo_Upenn.png" alt="Upenn" height="48" />-->
+								<!-- <img class="size-medium wp-image-712" style="margin-bottom: 0px;" -->
+								<!-- src="./files/Logo_Upenn.png" alt="University of Pennsylvania" width="141" /> -->
+								<!-- </a> -->
+
+							</p>
+						</div>
+
+					</div>
+				</div>
+
+
+
+
+
+
+
+				<script>
+					var slideIndex = 0;
+					var slider = document.querySelector('.slider');
+					var slides = document.querySelectorAll('.slide');
+
+					function showSlide() {
+						slider.style.transform = `translateX(-${slideIndex * 100}%)`;
+					}
+
+					function prevSlide() {
+						slideIndex--;
+						if (slideIndex < 0) {
+							slideIndex = slides.length - 1;
+						}
+						showSlide();
+					}
+
+					function nextSlide() {
+						slideIndex++;
+						if (slideIndex >= slides.length) {
+							slideIndex = 0;
+						}
+						showSlide();
+					}
+				</script>
+
+
+
+				<!---
+				</p>
+				<p>
+					</p><h3><i>Research Interests</i></h3>
+					<table border="0" cellpadding="0" style="border:0pt;margin-left:8%">
+						<tbody>
+							<tr>
+								<td style="border:0pt">
+									<p align="center" style="text-align:center">
+										<b>&nbsp;&nbsp;&nbsp;&nbsp;Computer Vision</b>
+									</p>
+								</td>
+								<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+								<td style="border:0pt">
+									<p align="center" style="text-align:center">
+										<b>&nbsp;&nbsp;&nbsp;&nbsp;Computer Graphics</b>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td style="border:0pt">
+									<ul>
+										<li style="text-align:left">Human Digitization</li>
+										<li style="text-align:left">Image-based Reconstruction</li>
+										<li style="text-align:left">Deep Learning</li>
+									</ul>
+								</td>
+								<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+								<td style="border:0pt">
+									<ul>
+										<li style="text-align:left">Texture/Pattern Synthesis</li>
+										<li style="text-align:left">Geometric Modeling</li>
+										<li style="text-align:left">Computational Fabrication</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				<p></p>
+				-->
+
+
+
+				<!--- News -->
+				<hr style="clear: both;">
+				<h2>News</h2>
+				<dl>
+					<ul class="custom-list_news2">
+						<!--					<li>-->
+						<!--						<span class="li_data">Jul. 2024:</span><span class="li_content">Coverage Axis is recognized at Top Cited Article in CGF 2022-2023.</span>-->
+						<!--					</li>-->
+						<li>
+							<span class="li_data">Oct. 2024:</span><span class="li_content">One paper was accepted to
+								CGF 2024.</span>
+						</li>
+
+						<details id="more-details">
+							<summary class="li_data_show_more">[Show More]</summary>
+							<li>
+								<span class="li_data2">Sep. 2024:</span><span class="li_content2">My homepage.</span>
+							</li>
+
+							<!-- "Show Less" 按钮 -->
+							<button id="show-less-button" style="display:none;" onclick="toggleDetails()">[Show
+								Less]</button>
+						</details>
+					</ul>
+				</dl>
+
+				<dl>
+
+					<ul class="custom-list">
+
+					</ul>
+				</dl>
+				<!--- Selected Publications -->
+				<hr style="clear: both;">
+				<!-- <h2>Selected Publications (<a href="https://frank-zy-d.github.io/publication.html">Full List</a>)</h2> -->
+				<h2>Selected Publications</h2>
+				<!--				 * Equal contribution.-->
+				<p align="left"># Equal Contributions; * Corresponding Authors;</p>
+
+				<!--				<div class="row" style="margin-bottom: 1em;">-->
+				<!--&lt;!&ndash;					<div class="span3">&ndash;&gt;-->
+				<!--					     <p align="left">* Equal contribution; # Corresponding Author; cs: coming soon.</p>-->
+				<!--&lt;!&ndash;					</div>&ndash;&gt;-->
+				<!--				</div>-->
+				<dl>
+
+					<!--					<div class="row">-->
+					<!--						<div class="span2" style="margin-bottom: 0em;">-->
+					<!--							<a href="https://zmzhang0.github.io/publication.html">-->
+					<!--								<img class="dropshadow pull-right" alt="" src="./figures/23_CAT++.png" width="200" height="120">-->
+					<!--							</a>-->
+					<!--						</div>-->
+					<!--						<div class="span6">-->
+					<!--							<a href="">-->
+					<!--								<strong>Coverage Axis++: Efficient Skeletal Points Selection for 3D Shape Skeletionization</strong>-->
+					<!--							</a>-->
+					<!--							<br> Zimeng Wang*, <strong>Zhiyang Dou</strong>*, Rui Xu, Cheng Lin, Yuan Liu, Xiaoxiao Long, Shiqing Xin, Lingjie Liu, Taku Komura, Wenping Wang.<br>-->
+					<!--							<em> <b>Arxiv 2023.</b></em>-->
+					<!--							<br>-->
+					<!--							Prev. Work: <a href="https://zmzhang0.github.io/projects/CoverageAxis/index.html"><strong>Coverage Axis</strong></a>.-->
+					<!--							<br>-->
+					<!--							<ul class="inline middot">-->
+					<!--								<li><em class="fa fa-file"></em> <a href="">project page (cs)</a></li>-->
+					<!--								<li><em class="fa fa-file"></em> <a href="">paper (cs)</a></li>-->
+					<!--								<li><em class="fa fa-file"></em> <a href="">code (cs)</a></li>-->
+					<!--								<li>-->
+					<!--									<em class="fa fa-bars"></em>-->
+					<!--									<a class="toggle_text_link" onclick="javascript:toggle(cat++);">abstract</a>-->
+					<!--									<pre id="cat++" class="invisible_text"></pre> &lt;!&ndash; put </pre> on this line to avoid new unwanted line breaks after bibtex &ndash;&gt;-->
+					<!--								</li>-->
+					<!--							</ul>-->
+
+					<!--						</div>-->
+					<!--&lt;!&ndash;						<br>&ndash;&gt;-->
+					<!--					</div>-->
+					<!-- <div class="row">
+						<div class="span2" style="margin-bottom: 0em;">
+							<a href="https://zmzhang0.github.io/figures/25_SIG_chapper.png">
+								<img class="dropshadow pull-right" alt="" src="./figures/25_SIG_chapper.png" width="160"
+									height="40">
+							</a>
+						</div>
+						<div class="span6">
+							<a href="">
+								<strong>Chapper: Carvable Hull-and-Pack for Subtractive Manufacturing</strong>
+							</a>
+							<br><strong>coming soon</strong><br>
+							
+							<ul class="inline middot">
+								<li><em class="fa fa-file"></em> <a href="">paper</a></li>
+								
+								<li>
+									<em class="fa fa-bars"></em>
+									<a class="toggle_text_link" onclick="javascript:toggle(scs23_HST);">abstract</a>
+									<pre id="scs23_HST" class="invisible_text"></pre>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<br> -->
+
+
+					<div class="row">
+						<div class="span2" style="margin-bottom: 0em;">
+							<a href="https://zmzhang0.github.io/figures/24_CGF_fouraxis.png">
+								<img class="dropshadow pull-right" alt="" src="./figures/24_CGF_fouraxis.png"
+									width="160" height="120">
+							</a>
+						</div>
+						<div class="span6">
+							<a href="https://haisenzhao.github.io/FourAxis/index.html">
+								<strong>Continuous Toolpath Optimization for Simultaneous Four-Axis Subtractive
+									Manufacturing</strong>
+							</a>
+							<br><strong>Zhenmin Zhang</strong>, Zihan Shi, Fanchao Zhong, Kun Zhang, Wenjing Zhang,
+							Jianwei Guo,Changhe Tu, Haisen Zhao*<br>
+							<em> <b>Computer Graphics Forum 2024 (Present on Eurographics 2025).</b></em>
+
+							<!--						<em>System development for close contact behavior collection.</em>-->
+							<!--						<p style="color: rgb(205,97,85)"><strong>This research has been featured in a <a href="https://www.eurekalert.org/news-releases/989780">press release</a> by <a href="https://archive.eurekalert.org/aboutus.php" >EurekAlert!</a>.</strong></p>-->
+							<!--							<br>
+
+	-->
+							<ul class="inline middot">
+								<!--							<li><em class="fa fa-file"></em> <a href="https://zmzhang0.github.io/projects/Pnas_nexus23/index.html">project page</a></li>-->
+								<li><em class="fa fa-file"></em> <a href="">paper</a></li>
+								<!--							<li><em class="fa fa-file"></em> <a href="">press release</a></li>-->
+								<!-- <li><em class="fa fa-file"></em> <a href="https://github.com/Xrvitd/RFEPS">code</a></li> -->
+								<!--<li><em class="fa fa-file"></em> <a href="https://www.youtube.com/watch?v=xjTVECIqZfc&feature=youtu.be">video</a></li> -->
+								<li>
+									<em class="fa fa-bars"></em>
+									<a class="toggle_text_link" onclick="javascript:toggle(scs23_HST);">abstract</a>
+									<pre id="scs23_HST"
+										class="invisible_text">Simultaneous four‐axis machining involves a cutter that moves in all degrees of freedom during carving. This strategy provides higher‐quality surface finishing compared to positional machining. However, it has not been well‐studied in research. In this study, we propose the first end‐to‐end computational framework to optimize the toolpath for fabricating complex models using simultaneous four‐axis subtractive manufacturing. In our technique, we first slice the input 3D model into uniformly distributed 2D layers. For each slicing layer, we perform an accessibility analysis for each intersected contour within this layer. Then, we proceed with over‐segmentation and a bottom‐up connecting process to generate a minimal number of fabricable segments. Finally, we propose post‐processing techniques to further optimize the tool directionand the transfer path between segments. Physical experiments of nine models demonstrate our significant improvements in both fabrication quality and efficiency, compared to the positional strategy and two simultaneous tool paths generated by industry‐standard CAM systems.</pre>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<br>
+
+				</dl>
+
+
+				<!--- News -->
+				<hr style="clear: both;">
+				<h2>Research Experience and Arrangements</h2>
+				<dl>
+					<ul>
+						<li>
+							<p>
+								<strong>Sep. 2025 - Jun. 2028</strong>: Ph.D. Student(full time),
+								<strong><a href="http://irc.cs.sdu.edu.cn/"> Interdisciplinary Research Center
+										(IRC)</a></strong>.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<strong>Jul. 2023 - Aug. 2025</strong>: Master's Student (full time),
+								<strong><a href="http://irc.cs.sdu.edu.cn/"> Interdisciplinary Research Center
+										(IRC)</a></strong>.
+							</p>
+						</li>
+
+						<li>
+							<p>
+								<strong>Sep. 2019 - Jun. 2023</strong>: Undergraduate Student,
+								<strong><a href="http://www.sdu.edu.cn/">Shandong University</a></strong>.
+							</p>
+						</li>
+
+
+					</ul>
+				</dl>
+				<h3>Work Experience and Collaboration</h3>
+				<br>
+				<div class="alignbottom">
+					<p>
+						<img class="size-medium wp-image-712" style="margin-bottom: 0px;" src="./files/sdu_irc.png"
+							alt="" width="20%" />
+						<!--						<a href="http://irc.cs.sdu.edu.cn/">-->
+						<!--							<img class="size-medium wp-image-712" style="margin-bottom: 0px;" src="./files/irc.png" alt="IRC" height="53" />-->
+						<!--						</a>-->
+						<!--						<a href="https://www.cs.hku.hk/">-->
+						<!--							<img class="size-medium wp-image-712" style="margin-bottom: 0px;" src="./files/hku1.png" alt="The University of Hong Kong" height=53" />-->
+						<!--						</a>-->
+						<!--						<tr>-->
+						<!--						<a href="https://ai.tencent.com/ailab/en/about/">-->
+						<!--							<img class="size-medium wp-image-712" style="margin-bottom: 0px;" src="./files/tencent_ailab.jpg" alt="Tencent AI Lab" height="48" />-->
+						<!--						</a>-->
+						<!--							&nbsp;-->
+						<!--							&nbsp;-->
+						<!--							&nbsp;-->
+						<!--							<a href="https://english.bjut.edu.cn/">-->
+						<!--							<img class="size-medium wp-image-712" style="margin-bottom: 0px;" src="./files/BJUT.png" alt="BJUT" height="53" />-->
+						<!--						</a>-->
+
+						<!--							&nbsp;-->
+						<!--							&nbsp;-->
+
+						<!--							<a href="https://twitter.com/TencentGames">-->
+						<!--							<img class="size-medium wp-image-712" style="margin-bottom: 0px;" src="./files/Logo_tencentgame.png" alt="Tencentgame" height="53" />-->
+						<!--						</a>-->
+						<!--							<br>-->
+						<!--							<br>-->
+						<!--							&nbsp;-->
+						<!--							<a href="https://www.transgp.hk/">-->
+						<!--							<img class="size-medium wp-image-712" style="margin-bottom: 0px;" src="./files/TransGP.png" alt="Boeing" height="40" />-->
+						<!--						</a>-->
+						<!--							&nbsp;-->
+						<!--							&nbsp;-->
+
+						<!--								<a href="http://www.boeing.cn/">-->
+						<!--							<img class="size-medium wp-image-712" style="margin-bottom: 0px;" src="./files/boeing.png" alt="Boeing" height="48" />-->
+						<!--						</a>-->
+						<!--							&nbsp;-->
+						<!--							&nbsp;-->
+						<!--							<a href="https://www.upenn.edu/">-->
+						<!--							<img class="size-medium wp-image-712" style="margin-bottom: 0px;" src="./files/Logo_Upenn.png" alt="Upenn" height="47" />-->
+						<!--						</a>-->
+
+
+
+
+
+
+						<!-- 		<a href="https://www.inria.fr/en/">
+							<img class="size-medium wp-image-712" style="margin-bottom: 0px;" src="./files/inria.png" alt="Inria" width="110" />
+						</a>
+
+						<a href="http://ict.usc.edu/">
+							<img class="size-medium wp-image-712" style="margin-bottom: 0px;" src="./files/uscict.jpg" alt="USC ICT" width="130" />
+						</a>
+						<a href="https://www.tencent.com/en-us/index.html">
+							<img class="size-medium wp-image-712" style="margin-bottom: 0px;" src="./files/tencent.png" alt="TecentUS" width="90" />
+						</a>
+				 -->
+					</p>
+				</div>
+
+
+
+
+				<!-- <hr style="clear: both;">
+
+				<h2>Services</h2>
+				<br>
+				<p>
+					<strong> Reviewer</strong>: SIGGRAPH; SIGGRAPH ASIA; TOG; TVCG; EG; PG; GM; CAD (CADJ); GMP; ICCV;
+					CVPR; ECCV; ICLR; 3DV; AAAI; CVM; CVPRW; ECCVW; TIP; CGI; Graphics Replicability Stamp; COMPUT J;
+					ICONIP; FSDM; MLIS; Scientific (BrainSTEM@HKU).
+				</p>
+
+				<p style="font-size: 80%;">
+					CVPR24W: <a href="https://generative-vision.github.io/workshop-CVPR-24/">GCV</a>; <a
+						href="https://humogen.github.io/">HuMoGen</a>;
+					<br>
+					ECCV24W: <a href="https://3d-in-the-wild.github.io/">Wild3D</a>, <a
+						href="https://sites.google.com/view/ai4vaeccv2024">AI4VA</a>, <a href="https://www.ood-cv.org/">
+						OOD-CV</a>;
+
+				</p>
+
+				<strong> Teaching Assistant:</strong>
+
+				<dl>
+					<ul class="custom-list">
+						<li>
+							<span class="li_data_short">2023:</span><span class="li_content_short">COMP3271 Computer
+								Graphics. Worked with <a
+									href="https://www.cs.hku.hk/index.php/people/academic-staff/taku"> Prof. Taku
+									Komura</a>.</span>
+						</li>
+						<li>
+							<span class="li_data_short">2022:</span><span class="li_content_short">COMP3362 Hands-on AI:
+								Experimentation and Applications. Worked with <a
+									href="https://www.cs.hku.hk/people/academic-staff/ykchoi">Dr. Yi-King
+									Choi</a>.</span>
+						</li>
+						<li>
+							<span class="li_data_short">2021:</span><span class="li_content_short">COMP3362 Hands-on AI:
+								Experimentation and Applications. Worked with <a
+									href="https://www.cs.hku.hk/people/academic-staff/ykchoi">Dr. Yi-King
+									Choi</a>.</span>
+						</li>
+						<li>
+							<span class="li_data_short">2020:</span><span class="li_content_short">COMP2120 Computer
+								Organization. Worked with <a
+									href="https://www.cs.hku.hk/people/academic-staff/kpchan">Prof. Kwok-Ping
+									Chan</a>.</span>
+						</li>
+
+					</ul>
+				</dl>
+
+				<p>
+					<strong> Invited Talks:</strong>
+				</p>
+
+				<dl>
+					<ul class="custom-list">
+
+						<li>
+							<span class="li_data">Oct. 2024:</span><span class="li_content">Visual Imitation Learning
+								for Simulated Characters, Shanghai AI Lab.</span>
+						</li>
+
+						<li>
+							<span class="li_data">Oct. 2024:</span><span class="li_content">Dynamic Realms: 4D Content
+								Analysis, Recovery and Generation with Geometric, Topological and Physical Priors,
+								ChinaGraph.</span>
+						</li>
+
+						<li>
+							<span class="li_data">Aug. 2024:</span><span class="li_content">On Efficient, Controllable,
+								and Physically Plausible Motion Synthesis, <a
+									href="https://www.mihoyo.com/en/">MiHoYo</a>.</span>
+						</li>
+						<li>
+							<span class="li_data">Apr. 2024:</span><span class="li_content">On the Readily Deployable
+								System for Detecting Close Contact Behaviors, <a
+									href="http://www.boeing.cn/">Boeing</a>.</span>
+						</li>
+						<li>
+							<span class="li_data">Dec. 2023:</span><span class="li_content">Shape Analysis, Recovery and
+								Generation with Geometric and Topological Priors, Stealth Startup.</span>
+						</li>
+						<li>
+							<span class="li_data">Nov. 2023:</span><span class="li_content">Geometric Computing - Medial
+								Axis Transform and Normal Orientation for Point Clouds, <a
+									href="https://www.shanghaitech.edu.cn/eng/">ShanghaiTech University</a>.</span>
+						</li>
+						<li>
+							<span class="li_data">Oct. 2023:</span><span class="li_content">Scalable Skill Embeddings
+								for Physics-based Characters, <a href="https://twitter.com/TencentGames">Tencent
+									Games</a>.</span>
+						</li>
+						<li>
+							<span class="li_data">Jun. 2023:</span><span class="li_content">Robust and Efficient Vision
+								Systems for Close Contact Behavior Analysis, <a
+									href="https://english.bjut.edu.cn/">Beijing University of Technology</a>.</span>
+						</li>
+						<li>
+							<span class="li_data">Feb. 2023:</span><span class="li_content">Scalable Skill Embeddings
+								for Physics-based Characters, <a href="https://www.en.sdu.edu.cn/">Shandong
+									University</a>.</span>
+						</li>
+						<li>
+							<span class="li_data">Oct. 2022:</span><span class="li_content">On Efficient Hand-to-Surface
+								Contact Estimation, <a href="http://www.boeing.cn/">Boeing</a>.</span>
+						</li>
+					</ul>
+				</dl>
+
+				<hr style="clear: both;">
+				<h2>Awards, Scholarships and Honors</h2>
+				<dl>
+					<ul class="custom-list">
+
+						<li>
+							<span class="li_data">Jul. 2024:</span><span class="li_content">Top Cited Article in CGF
+								2022-2023. [<a
+									href="https://zmzhang0.github.io/files/Cert_Top_Cited_Article.pdf">Link</a>]</span>
+						</li>
+						<li>
+							<span class="li_data">Jul. 2024:</span><span class="li_content">HKU Foundation First Year
+								Excellent PhD Award 2023/24.</span>
+						</li>
+						<li>
+							<span class="li_data">Oct. 2023:</span><span class="li_content">The Best Paper Award,
+								SIGGRAPH 2023. [<a
+									href="https://zmzhang0.github.io/files/Cert_SIG23_BP.pdf">Link</a>]</span>
+						</li>
+						<li>
+							<span class="li_data">Oct. 2020:</span><span class="li_content">Postgraduate
+								Scholarship.</span>
+						</li>
+						<li>
+							<span class="li_data">Oct. 2019:</span><span class="li_content">National Scholarship.</span>
+						</li>
+						<li>
+							<span class="li_data">Dec. 2019:</span><span class="li_content">Presidential
+								Scholarship.</span>
+						</li>
+						<li>
+							<span class="li_data">Oct. 2018:</span><span class="li_content">National Scholarship.</span>
+						</li>
+
+
+					</ul>
+				</dl>
+				<h2>Competitions</h2>
+				<dl>
+					<ul class="custom-list">
+						<li>
+							<span class="li_data_short">2019:</span><span class="li_content_short">National First Prize,
+								National Mathematical Modeling Contest.</span>
+						</li>
+						<li>
+							<span class="li_data_short">2019:</span><span class="li_content_short">Meritorious Winner,
+								International Mathematical Modeling Contest: The Mathematical Contest in Modeling
+								(MCM).</span>
+						</li>
+						<li>
+							<span class="li_data_short">2018:</span><span class="li_content_short">National First Prize,
+								The Best Paper Award (8/38573), National Mathematical Modeling Contest.</span>
+						</li>
+						<li>
+							<span class="li_data_short">2018:</span><span class="li_content_short">Meritorious Winner,
+								International Mathematical Modeling Contest: The Interdisciplinary Contest in Modeling
+								(ICM).</span>
+						</li>
+						<li>
+							<span class="li_data_short">2018:</span><span class="li_content_short">National Grand Prize
+								(1st), Most Commercially Valuable Award, Most Popular Award; The 11th National
+								University Student Software Innovation Contest.</span>
+						</li>
+
+					</ul>
+				</dl> -->
+
+
+				<hr style="clear: both;">
+				<h2>Miscs.</h2>
+				<br>
+				<p>I <i>used</i> to be:</p>
+				<dl>
+					<ul class="custom-list">
+						<li>a basketball player and a table tennis player.
+						</li>
+					</ul>
+
+				</dl>
+				<center>
+					<img class="size-medium wp-image-712" style="margin-bottom: 20px;" src="./figs/fig_picture1.jpg"
+						alt="" width="96%" />
+				</center>
+			</div><!-- /#main -->
+
+
+
+			<aside id="sidebar" class="span4" role="complementary">
+				<div class="well">
+					<section id="text-2" class="widget-1 widget-first widget widget_text">
+						<div id="hiddenSection" class="hidden-anchor"></div>
+						<div id="hiddenSection2" class="hidden-anchor"></div>
+						<script>
+							function scrollToHiddenSection() {
+								var element = document.getElementById('hiddenSection');
+
+								// 使用 block: 'start' 和 inline: 'nearest' 确保目标元素稍微偏离顶部
+								element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+
+								var anotherText = document.getElementById('anotherText');
+
+								// 切换加粗效果
+								element.classList.toggle('bold');
+
+								// 使另一个地方的文字闪烁
+								anotherText.classList.add('highlighted');
+
+								// 3秒后移除闪烁效果
+								setTimeout(function () {
+									anotherText.classList.remove('highlighted');
+								}, 1000);
+							}
+						</script>
+
+						<script>
+							function scrollToHiddenSection2() {
+								var element = document.getElementById('hiddenSection2');
+								element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+								var anotherText = document.getElementById('anotherText2');
+
+								// 切换加粗效果
+								element.classList.toggle('bold');
+
+								// 使另一个地方的文字闪烁
+								anotherText.classList.add('highlighted');
+
+								// 3秒后移除闪烁效果
+								setTimeout(function () {
+									anotherText.classList.remove('highlighted');
+								}, 1000);
+							}
+						</script>
+
+						<script>
+							function scrollToHiddenSection3() {
+								var element = document.getElementById('hiddenSection3');
+								element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+								var anotherText = document.getElementById('anotherText3');
+								// 切换加粗效果
+								element.classList.toggle('bold');
+								// 使另一个地方的文字闪烁
+								anotherText.classList.add('highlighted');
+								// 3秒后移除闪烁效果
+								setTimeout(function () {
+									anotherText.classList.remove('highlighted');
+								}, 1000);
+							}
+						</script>
+
+
+						<div class="widget-inner">
+							<!-- <h3>Visualization of Research Interests</h3>
+							<br>
+							<center>
+								<img src="files/fig_roadmap2.png" style="width: 292px;">
+
+							</center> -->
+
+
+							<h3>Contact info</h3>
+							<div class="textwidget">
+								<h6 id="anotherText2">Email</h6>
+
+								<a class="email" href="zhenminzhang.cn@gmail.com">zhenminzhang.cn@gmail.com</a>
+								<br>
+								<br>
+								<h6>Address</h6>
+								<!--								&#x2022; 34F 032, Tencent AILab, Gemdale Viseen Tower B, Hi-Tech South 9th Rd, Shenzhen, China.-->
+								<!--								<br>-->
+								<!--								&#x2022; Rm 416, CYC Bldg, The University of Hong Kong, Pokfulam Road, Hong Kong.-->
+								&#x2022; Shandong University Qingdao Campus
+								<br>
+
+
+
+							</div>
+						</div>
+					</section>
+
+					<br>
+					<section id="text-2" class="widget-1 widget-first widget widget_text">
+						<div class="widget-inner">
+							<h3> <a href="./files/cg_zhenmin_zhang-0.pdf"> Curriculum Vitae </a></h3>
+						</div>
+					</section>
+					<br>
+
+					<section id="social-widget-2" class="widget-3 widget Social_Widget">
+						<div class="widget-inner">
+							<h3>More Links</h3>
+							<div class="socialmedia-buttons smw_left">
+								<a href="https://scholar.google.com.hk/citations?user=R1moSAIAAAAJ&hl=en"
+									rel="publisher" target="_blank">
+									<img width="27" height="27" src="./files/scholar.png" alt="Google Scholar"
+										title="Google Scholar" style="opacity: 0.8; -moz-opacity: 0.8;" class="fade">
+								</a>
+								<a href="https://github.com/zmzhang0" rel="nofollow" target="_blank">
+									<img width="27" height="27" src="./files/github.png" alt="GitHub" title="GitHub"
+										style="opacity: 0.8; -moz-opacity: 0.8;" class="fade">
+								</a>
+								<!-- <a href="https://www.linkedin.com/in/zhiyang-dou-0259111b3/" rel="nofollow"
+									target="_blank">
+									<img width="27" height="27" src="./files/linkedin.png" alt="LinkedIn"
+										title="LinkedIn" style="opacity: 0.8; -moz-opacity: 0.8;" class="fade">
+								</a>
+
+								<a href="https://www.researchgate.net/profile/Zhiyang-Dou-2" rel="nofollow"
+									target="_blank">
+									<img width="27" height="27" src="./files/RG.jpg" alt="RG" title="RG"
+										style="opacity: 0.8; -moz-opacity: 0.8;" class="fade">
+								</a>
+
+
+								<a href="https://orcid.org/0000-0003-0186-8269" rel="nofollow" target="_blank">
+									<img width="28" height="28" src="./files/orcid.png" alt="ORCID" title="ORCID"
+										style="opacity: 0.8; -moz-opacity: 0.8;" class="fade">
+								</a>
+								<a href="https://www.semanticscholar.org/author/Zhiyang-Dou/1382485620" rel="publisher"
+									target="_blank">
+									<img width="27" height="27" src="./files/semanticscholar.png" alt="Semantic Scholar"
+										title="Semantic Scholar" style="opacity: 0.8; -moz-opacity: 0.8;" class="fade">
+								</a>
+
+								<a href="https://twitter.com/frankzydou" rel="nofollow" target="_blank">
+									<img width="27" height="27" src="./files/twitter.png" alt="Twitter" title="Twitter"
+										style="opacity: 0.8; -moz-opacity: 0.8;" class="fade">
+								</a>
+
+
+								<a href="https://www.youtube.com/@ZhiyangDou" rel="nofollow" target="_blank">
+									<img width="28" height="27" src="./files/Youtube_logo.png" alt="Youtube"
+										title="Youtube" style="opacity: 0.8; -moz-opacity: 0.8;" class="fade">
+								</a> -->
+								<ul class="nav">
+									<!--								&#x2022; 34F 032, Tencent AILab, Gemdale Viseen Tower B, Hi-Tech South 9th Rd, Shenzhen, China.-->
+									<!--								<br>-->
+									<!--								&#x2022; Rm 416, CYC Bldg, The University of Hong Kong, Pokfulam Road, Hong Kong.-->
+									<!-- <br>
+									&#x2022; <a href="http://anysyn3d.github.io">AnySyn3D</a>
+									<br>
+									&#x2022; <a href="https://hku-cg.github.io/">CGVU Lab</a> -->
+
+
+
+
+
+
+
+
+									<!-- 	<a href="https://www.facebook.com/chen.weikai.3" rel="nofollow" target="_blank">
+									<img width="32" height="32" src="./files/facebook.png" alt="Follow me on Facebook" title="Follow me on Facebook" style="opacity: 0.8; -moz-opacity: 0.8;" class="fade">
+								</a> -->
+
+									<!-- site credits -->
+									<br><br>
+									<em class="fa fa-credit-card"></em> <a class="toggle_text_link"
+										onclick="javascript:toggle(site_credits);">Site Credits</a>
+									<pre id="site_credits" class="invisible_text">
+This site was built using <a href="http://twitter.github.io/bootstrap/">Bootstrap</a>, a front-end framework for web development. <br /><br />The style of this site is inspired by <a href="https://frank-zy-dou.github.io/">Dr. Zhiyang Dou</a>'s, <a href="http://richardt.name/">Dr. Christian Richardt</a>'s, <a href="http://herohuyongtao.github.io/">Dr. Yongtao Hu</a>'s and <a href="http://chenweikai.github.io/">Dr. Weikai Chen</a>'s personal websites.</pre>
+									<!-- put </pre> on this line to avoid new unwanted line breaks after bibtex -->
+
+									<!-- site statistics -->
+									<!-- <br><br> -->
+									<!-- <script type="text/javascript" src="//rf.revolvermaps.com/0/0/1.js?i=563zgztxfth&amp;s=186&amp;m=6&amp;v=true&amp;r=false&amp;b=000000&amp;n=false&amp;c=ff0000" async="async"></script> -->
+							</div>
+						</div>
+					</section>
+				</div>
+			</aside><!-- /#sidebar -->
+		</div><!-- /#content -->
+	</div><!-- /#wrap -->
+
+	<footer id="content-info" class="container" role="contentinfo">
+		<table width="100%">
+			<tbody>
+				<tr>
+					<td style="text-align:center">
+						<div style="display:inline-block;width:210px;">
+							<script type="text/javascript"
+								src="//rf.revolvermaps.com/0/0/7.js?i=563zgztxfth&amp;m=6&amp;c=007eff&amp;cr1=ffffff&amp;br=8&amp;sx=0"
+								async="async"></script>
+						</div>
+						<p class="copy"><small>Last updated: May, 2024</small></p>
+						<p class="copy"><small>© 2024 Zhiyang Dou</small></p>
+					</td>
+				</tr>
+
+
+			</tbody>
+		</table>
+	</footer>
+
+	<!-- From http://stackoverflow.com/a/11668413/72470
+	<script>
+	  !function ($) {
+		$(function(){
+		  window.prettyPrint && prettyPrint()
+		})
+	  }(window.jQuery)
+	</script>
+	-->
+
+
+	<div id="cntvlive2-is-installed"></div>
+</body>
+
+</html>
