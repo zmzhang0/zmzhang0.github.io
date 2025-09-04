@@ -502,8 +502,8 @@
 				<!--				</div>-->
 				<dl>
 
-					<div class="row" style="height:120px; overflow:auto;">
-						<div class="span2" style="margin-bottom: 0em;">
+					<div class="row" style="min-height:120px; overflow:auto; display: flex; align-items: center;">
+						<div class="span2">
 							<a href="https://zmzhang0.github.io/figures/25_SIGA_WastetoValue.png">
 								<img class="dropshadow pull-right" alt="" src="./figures/25_SIGA_WastetoValue.png"
 									width="" height="">
@@ -531,28 +531,18 @@
 								<!--<li><em class="fa fa-file"></em> <a href="https://www.youtube.com/watch?v=xjTVECIqZfc&feature=youtu.be">video</a></li> -->
 								<li>
 									<em class="fa fa-bars"></em>
-									<a class="toggle_text_link" onclick="javascript:toggle(scs23_HST);">abstract</a>
-									<pre id="scs23_HST" class="invisible_text">Remanufacturing effectively extends component lifespans by restoring used or end-of-life parts to like-new or even
-									superior conditions, with an emphasis on maximizing reutilized material, especially for high-cost materials. Hybrid
-									manufacturing technology combines the capabilities of additive and subtractive manufacturing, with the ability to add
-									and remove material, enabling it to remanufacture complex shapes and is increasingly being applied in remanufacturing.
-									How to effectively plan the process of additive and subtractive hybrid remanufacturing (ASHRM) to maximize material
-									reutilization has become a key focus of attention. However, current ASHRM process planning methods lack strict
-									consideration of collision-free constraints, hindering practical application. This paper introduces a computational
-									framework to tackle ASHRM process planning for general shapes with strictly considering these constraints. We separate
-									global and local collision-free constraints, employing clipping planes and graph to tackle them respectively, ultimately
-									maximizing the reutilized volume while ensuring these constraints are satisfied. Additionally, we also optimize the
-									setup of the target model that is conducive to maximizing the reutilized volume. Extensive experiments and physical
-									validations on a 5-axis hybrid manufacturing platform demonstrate the effectiveness of our method across various 3D
-									shapes, achieving an average material reutilization of 69% across 12 cases.</pre>
+									<a class="toggle_text_link" onclick="javascript:toggle(refab);">abstract</a>
+									<pre id="refab"
+										class="invisible_text">Remanufacturing effectively extends component lifespans by restoring used or end-of-life parts to like-new or even superior conditions, with an emphasis on maximizing reutilized material, especially for high-cost materials. Hybrid manufacturing technology combines the capabilities of additive and subtractive manufacturing, with the ability to add and remove material, enabling it to remanufacture complex shapes and is increasingly being applied in remanufacturing. How to effectively plan the process of additive and subtractive hybrid remanufacturing (ASHRM) to maximize material reutilization has become a key focus of attention. However, current ASHRM process planning methods lack strict consideration of collision-free constraints, hindering practical application. This paper introduces a computational framework to tackle ASHRM process planning for general shapes with strictly considering these constraints. We separate global and local collision-free constraints, employing clipping planes and graph to tackle them respectively, ultimately maximizing the reutilized volume while ensuring these constraints are satisfied. Additionally, we also optimize the setup of the target model that is conducive to maximizing the reutilized volume. Extensive experiments and physical validations on a 5-axis hybrid manufacturing platform demonstrate the effectiveness of our method across various 3D shapes, achieving an average material reutilization of 69% across 12 cases.</pre>
 								</li>
 							</ul>
 						</div>
 					</div>
-					<br>
+					<hr style="clear: both;">
 
-					<div class="row" style="height:120px; overflow:auto;">
-						<div class="span2" style="margin-bottom: 0em;">
+
+					<div class="row" style="min-height:120px; overflow:auto;  display: flex; align-items: center;">
+						<div class="span2">
 							<a href="https://zmzhang0.github.io/figures/25_SIGA_chapper.png">
 								<img class="dropshadow pull-right" alt="" src="./figures/25_SIGA_chapper.png" width=""
 									height="">
@@ -579,44 +569,17 @@
 								<!--<li><em class="fa fa-file"></em> <a href="https://www.youtube.com/watch?v=xjTVECIqZfc&feature=youtu.be">video</a></li> -->
 								<li>
 									<em class="fa fa-bars"></em>
-									<a class="toggle_text_link" onclick="javascript:toggle(scs23_HST);">abstract</a>
-									<pre id="scs23_HST" class="invisible_text">Tightly cutting raw materials into a set of carvable objects, known as the
-										stock cutting problem, is a necessary step in subtractive manufacturing.
-										This problem can be framed as a 3D irregular object packing task, aiming
-										to fit as many objects as possible within a predefined container. While
-										previous packing algorithms can generate dense, non-overlapping, and even
-										interlocking-free configurations, they cannot satisfy carvable constraints.
-										<br>
-										This paper introduces the carvable hull-and-pack problem, which inte-
-										grates irregular object packing with subtractive manufacturing. This problem
-										is more challenging than general 3D packing, as it requires ensuring the
-										carvability of each object and generate the disassembly sequence. To address
-										this, we first define a novel geometric hull, called carving hull, which ac-
-										counts for both the object’s shape and the cutter accessibility, constrained by
-										the real-time distribution of surrounding objects. Then we present Chapper,
-										an effective solution to co-optimize the planning of carving hull pack and
-										disassembly sequence to maximize space utilization while preserving the
-										carvable constraints. Given a raw material and a list of generic 3D objects,
-										our algorithm starts with densely packing each object into the material
-										with a pre-computed placement order, while simultaneously maintaining
-										a valid disassembly sequence. We solve the complex object-to-object and
-										cutter-to-object collisions by leveraging a discrete voxel representation. The
-										carvability of each object is also guaranteed in the packing process, where
-										we define a novel carvable metric to determine whether each object is carv-
-										able or not. Based on the packing result and the disassembly sequence, we
-										propose a clipped Voronoi-based volume decomposition method to generate
-										the actual carving hull for each object and finally create feasible cutting
-										tool paths on the carving hulls. Our approach effectively packs CAD and
-										freeform datasets, exhibiting a unique space utilization rate performance
-										compared to the alternative baseline.</pre>
+									<a class="toggle_text_link" onclick="javascript:toggle(chapper);">abstract</a>
+									<pre id="chapper"
+										class="invisible_text">Tightly cutting raw materials into a set of carvable objects, known as the stock cutting problem, is a necessary step in subtractive manufacturing. This problem can be framed as a 3D irregular object packing task, aiming to fit as many objects as possible within a predefined container. While previous packing algorithms can generate dense, non-overlapping, and even disassemblable configurations, they cannot satisfy carvable constraints. <br> This paper introduces the carvable hull-and-pack problem, which integrates irregular object packing with subtractive manufacturing. This problem is more challenging than general 3D packing, as it requires ensuring the carvability of each object and generate the disassembly sequence. To address this, we first define a novel geometric hull, called carving hull, which accounts for both the object's shape and the cutter accessibility, constrained by the real-time distribution of surrounding objects. Then we present Chapper, an effective solution to co-optimize the planning of carving hull pack and disassembly sequence to maximize space utilization while preserving the carvable constraints. Given a raw material and a list of generic 3D objects, our algorithm starts with densely packing each object into the material with a pre-computed placement order, while simultaneously maintaining a valid disassembly sequence. We solve the complex object-to-object and cutter-to-object collisions by leveraging a discrete voxel representation. The carvability of each object is also guaranteed in the packing process, where we define a novel carvable metric to determine whether each object is carvable or not. Based on the packing result and the disassembly sequence, we propose a clipped Voronoi-based volume decomposition method to generate the actual carving hull for each object and finally create feasible cutting tool paths on the carving hulls. Our approach effectively packs CAD and freeform datasets, exhibiting a unique space utilization rate performance compared to the alternative baseline.</pre>
 								</li>
 							</ul>
 						</div>
 					</div>
-					<br>
+					<hr style="clear: both;">
 
-					<div class="row" style="height:120px; overflow:auto;">
-						<div class="span2" style="margin-bottom: 0em;">
+					<div class="row" style="min-height:120px; overflow:auto; display: flex; align-items: center;">
+						<div class="span2">
 							<a href="https://zmzhang0.github.io/figures/24_CGF_fouraxis.png">
 								<img class="dropshadow pull-right" alt="" src="./figures/24_CGF_fouraxis.png" width=""
 									height="">
@@ -645,14 +608,13 @@
 								<!--<li><em class="fa fa-file"></em> <a href="https://www.youtube.com/watch?v=xjTVECIqZfc&feature=youtu.be">video</a></li> -->
 								<li>
 									<em class="fa fa-bars"></em>
-									<a class="toggle_text_link" onclick="javascript:toggle(scs23_HST);">abstract</a>
-									<pre id="scs23_HST"
+									<a class="toggle_text_link" onclick="javascript:toggle(fouraxis);">abstract</a>
+									<pre id="fouraxis"
 										class="invisible_text">Simultaneous four‐axis machining involves a cutter that moves in all degrees of freedom during carving. This strategy provides higher‐quality surface finishing compared to positional machining. However, it has not been well‐studied in research. In this study, we propose the first end‐to‐end computational framework to optimize the toolpath for fabricating complex models using simultaneous four‐axis subtractive manufacturing. In our technique, we first slice the input 3D model into uniformly distributed 2D layers. For each slicing layer, we perform an accessibility analysis for each intersected contour within this layer. Then, we proceed with over‐segmentation and a bottom‐up connecting process to generate a minimal number of fabricable segments. Finally, we propose post‐processing techniques to further optimize the tool directionand the transfer path between segments. Physical experiments of nine models demonstrate our significant improvements in both fabrication quality and efficiency, compared to the positional strategy and two simultaneous tool paths generated by industry‐standard CAM systems.</pre>
 								</li>
 							</ul>
 						</div>
 					</div>
-					<br>
 
 				</dl>
 
